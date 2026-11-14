@@ -86,7 +86,7 @@ loadRates();
 const searchCurrency = document.getElementById("searchCurrency");
 
 searchCurrency.addEventListener("input", function () {
-    const search = searchCurrency.value.toUpperCase();
+    const search = searchCurrency.value .toUpperCase();
     const rows = ratesTable.querySelectorAll("tr");
 
     rows.forEach(row => {
@@ -104,7 +104,7 @@ const sortRates = document.getElementById("sortRates");
 
 sortRates.addEventListener("change", function () {
     const rows = Array.from(ratesTable.querySelectorAll("tr"));
-    const selected = sortRates.values;
+    const selected = sortRates.value;
 
     if (selected === "name") {
         rows.sort((a,b) =>
