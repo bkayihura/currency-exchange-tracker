@@ -38,6 +38,41 @@
             <p id="result">Your result will appear here.</p>
         </section>
 
+        <section> 
+            <h2> Live Exchange Rates</h2>
+            <p>View exchange rates for different currencies.</p>
+
+            <label for="searchCurrency">Search Currency</label>
+            <input
+            type="text"
+            id="searchCurrency"
+            placeholder="Search USD, RWF, EUR..."
+            >
+
+            <label for="sortRates">Sort Rates</label>
+            <select id="sortRates">
+                <option value="default">Default Order</option>
+                <option value="name">Currency (A-Z)</option>
+                <option value="low">Rate (Low to High)</option>
+                <option value="high">Rate (High to Low)</option>
+            </select>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Rate (1 USD)</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ratesTable">
+                    <tr>
+                        <td colspan="2">Loading rates...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <script src="script.js"></script>
     </body>
 </html>

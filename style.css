@@ -23,7 +23,7 @@ h2 {
 section {
     background: white;
     max-width: 650px;
-    margin: 35 auto;
+    margin: 35px auto;
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -66,4 +66,36 @@ button:hover {
     border-radius: 8px;
     margin-top: 20px;
     font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+
+}
+
+tbody tr:nth-child(even) {
+    background: #f1f5ff;
+}
+
+tbody tr:hover {
+    background: #dbeafe;
+}
+
+section {
+    margin-left: auto;
+    margin-right: auto;
 }
