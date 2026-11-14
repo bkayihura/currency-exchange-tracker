@@ -31,8 +31,8 @@ async function convertCurrency() {
     const converted = amount * data.rates[to];
 
     result.textContent = `${amount} ${from} = ${converted.toFixed(2)} ${to}`;
-} catch (error) {
-    result.textContent ="Unable to load exchange rates. Please try again.";
+} catch (error){
+      result.textContent = "Unable to load exchange rates. Please try again.";
     console.error(error);
 }
 
@@ -51,12 +51,12 @@ async function loadRates() {
         }
 
         const data = await response.json();
-    
+
         if (data.result !== "success") {
             throw new Error("Invalid API response");
         }
 
-        const currencies = ["RWF", "EUR", "GBP", "KES", "UGX", "TZS", "JPY", "CAD"];
+        const currencies = ["RWF", "EUR", "GBP", "KES", "UGX" , "TZS", "JPY", "CAD"];
 
         ratesTable.innerHTML = "";
 
@@ -76,7 +76,7 @@ async function loadRates() {
             ratesTable.appendChild(row);
         });
     } catch (error) {
-        ratesTable.innerHTML = "<tr><td colspan='2'>Unable to load rates.</td></tr>";
+        ratesTable.innerHTML = "<tr><td> colspan='2'>Unable to load rates.</td></tr>";
         console.error(error);
     }
 }
@@ -104,28 +104,28 @@ const sortRates = document.getElementById("sortRates");
 
 sortRates.addEventListener("change", function () {
     const rows = Array.from(ratesTable.querySelectorAll("tr"));
-    const selected = sortRates.value;
+    const selected = sortRates.values;
 
-   if (selected === "name") {
-    rows.sort((a,b) =>
-        a.cells[0].textContent.localeCompare(b.cells[0].textContent)
-    );
-
-    } else if (selected === "low") {
+    if (selected === "name") {
+        rows.sort((a,b) =>
+            a.cells[0].textContent.localeCompare(b.cells[0].textContent)
+        );
+        
+    } else if (selected === "low" ) {
         rows.sort((a,b) =>
             Number(a.cells[1].textContent) - Number(b.cells[0].textContent)
         );
-    } else if (selected === "high") {
+    } else if (selected == "high") {
         rows.sort ((a,b) =>
             Number(b.cells[1].textContent) - Number(a.cells[1].textContent)
-        );
+    );
     } else {
-        const originalOrder = ["RWF", "EUR", "GBP", "KES", "UGX","TZS","JPY","CAD"];
+        const originalOrder = ["RWF", "EUR", "GBP", "KES", "UGX", "TZS", "JPY","CAD"];
 
         rows.sort ((a,b) =>
-            originalOrder.indexOf(a.cells[0].textContent) -
+            originalOrder.indexOf(a.cells[0].textContent) - 
             originalOrder.indexOf(b.cells[0].textContent)
-        );
+         );   
     }
 
     rows.forEach(row => ratesTable.appendChild(row));
