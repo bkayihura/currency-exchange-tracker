@@ -113,7 +113,7 @@ sortRates.addEventListener("change", function () {
 
     } else if (selected === "low") {
         rows.sort((a,b) =>
-            Number(a.cells[1].textContent).localCompare(b.cells[0].textContent)
+            Number(a.cells[1].textContent) - Number(b.cells[0].textContent)
         );
     } else if (selected === "high") {
         rows.sort ((a,b) =>
@@ -129,4 +129,10 @@ sortRates.addEventListener("change", function () {
     }
 
     rows.forEach(row => ratesTable.appendChild(row));
+});
+
+const refreshBtn = document.getElementById("refreshBtn");
+
+refreshBtn.addEventListener("click", function () {
+    loadRates();
 });
