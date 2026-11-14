@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UFT-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name ="viewport" content="width=device, initial-scaled=1.0">
+        <meta name="decription" content="currencies and view live exchange rates.">
+
         <title>Currency Exchange Tracker</title>
         <link rel="stylesheet" href="style.css">
 
     </head>
+
     <body>
         <h1>Currency Exchange Tracker</h1>
         <p>Check live exchange rates and convert currencies.</p>
 
         <section>
-            <h2> Currency Converter</h2>
+            <h2>Currency Converter</h2>
 
             <label for="amount">Amount</label>
-            <input type="number" id="amount" value="1" min="0" step="any">
+            <input type="number" id="amount" value="1"min="0" step="any">
 
             <label for="from">From</label>
             <select id="from">
                 <option value="USD">USD</option>
                 <option value="RWF">RWF</option>
-                <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
             </select>
 
@@ -35,26 +37,23 @@
 
             <button id="convertBtn">Convert</button>
 
-            <p id="result">Your result will appear here.</p>
+            <p id="result">Your result will appear here</p>
         </section>
 
-        <section> 
-            <h2> Live Exchange Rates</h2>
-            <p>View exchange rates for different currencies.</p>
+        <section>
+            <h2>Live Exchange Rates</h2>
+            <p>View exchange rates for differnt currencies.</p>
 
             <label for="searchCurrency">Search Currency</label>
-            <input
-            type="text"
-            id="searchCurrency"
-            placeholder="Search USD, RWF, EUR..."
-            >
+            <input type="text" id="searchCurrency" placeholder="Search USD,RWF,EUR">
+
 
             <label for="sortRates">Sort Rates</label>
             <select id="sortRates">
                 <option value="default">Default Order</option>
-                <option value="name">Currency (A-Z)</option>
+                <option value="name">Currency(A-Z)</option>
                 <option value="low">Rate (Low to High)</option>
-                <option value="high">Rate (High to Low)</option>
+                <option value="high">Rate (High to low)</option>
             </select>
 
             <button id="refreshBtn">Refresh Rates</button>
@@ -69,7 +68,7 @@
 
                 <tbody id="ratesTable">
                     <tr>
-                        <td colspan="2">Loading rates...</td>
+                        <td colspan="2"> LOading rates...</td>
                     </tr>
                 </tbody>
             </table>
